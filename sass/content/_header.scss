@@ -1,0 +1,102 @@
+@use "../utilities/variables";
+
+header {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1920px;
+    padding: 1.5rem 6.5rem;
+    z-index: 998!important;
+    background-color: variables.$transparent;
+
+    &.active {
+        background: variables.$headerBg;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border-bottom: solid 1px variables.$headerBorder;
+        border-width: 0 0 thin;
+    }
+
+    &.alert {
+        z-index: 1!important;
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: variables.$primary;
+        z-index: 999;
+    }
+
+    &__menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+
+        li {
+            a {
+                position: relative;
+                color: variables.$primary;
+                text-transform: uppercase;
+                padding: 1rem;
+
+                &:hover {
+                    border-bottom: 1px solid variables.$cyan;
+                }
+
+                &:active, &:focus {
+                    border-bottom: 1px solid variables.$cyan;
+                }
+            }
+            
+            &:last-child {
+                display: none;
+            }
+        }
+    }
+
+    &__button {
+        color: variables.$primary;
+        padding: 1rem;
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        border: 1px solid variables.$primary;
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, 0);
+        transition: all 0.3s ease-in;
+
+        cursor: pointer;
+
+        &:hover {
+            background: variables.$cyan;
+            border: 1px solid variables.$cyan;
+            transition: all 0.3s ease-out;
+        }
+    }
+
+    &__hamMenu {
+        display: none;
+        cursor: pointer;
+    
+        & .bar {
+            display: block;
+            height: 3px;
+            width: 25px;
+            margin: 5px 0;
+            background-color: variables.$primary;
+            z-index: 997;
+
+            transition: all 0.3s ease-in;
+        }
+    }
+}

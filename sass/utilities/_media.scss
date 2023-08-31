@@ -1,0 +1,512 @@
+@use "variables";
+@use "../content/header.scss";
+@use "../content/section2.scss";
+
+@media screen and (max-width: variables.$bk-dp){
+    body, html {
+        width: 100%;
+        max-width: variables.$bk-dp;
+    }
+}
+
+@media screen and (max-width: variables.$bk-lcmp) {
+    .hero1 {
+        & .container {
+            max-width: 630px;
+        }
+    }
+
+    .hero2 {
+        & .cards {
+
+            &__details {
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    .hero3 {
+        & .cards {
+            &__header {
+                height: 20rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:variables.$bk-mcmp) {
+    .hero2 {
+        margin: 0 auto;
+
+        & .cards {
+            width: 80vw;
+
+            &__container {
+                width: 100%;
+                margin: auto 0.5rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:variables.$bk-tbt) {
+    header {
+        padding: 1.5rem 2rem;
+        background: variables.$bg;
+        z-index: 999;
+    }
+
+    .navbar {
+        
+        &__menu {
+            display: flex;
+            flex-direction: column;;
+            position: absolute;
+            height: 100vh;
+            width: 100vw;
+            top: 0;
+            left: 800px;
+            transition: all 0.7s ease-in-out;
+            z-index: 1;            
+            overflow: auto;
+
+            &.active {
+                position: fixed;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: rgba(0, 0, 0, 1);
+                transition: all 0.5s ease-out;
+                z-index: 1;
+            }
+
+            li {
+                margin: 2rem 0;
+
+                &:last-child{
+                    display: block;
+                }
+            }
+        }
+
+        &__button--lists {
+            color: variables.$primary;
+            background: variables.$cyan;
+            padding: 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            border: 1px solid variables.$cyan;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        &__button {
+            display: none;
+        }
+
+        &__hamMenu {
+            display: block;
+            z-index: 997;
+            
+            &.active {
+                & .bar {
+                    &:nth-child(2){
+                        opacity: 0;
+                    }
+    
+                    &:nth-child(1){
+                        transform: translateY(8px) rotate(45deg);
+                    }
+    
+                    &:nth-child(3){
+                        transform: translateY(-8px) rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+
+    .hero2 {
+        margin: 0 auto;
+
+        & .row {
+            display: flex;
+            flex-direction: column;
+        }
+
+        & .cards {
+            display: flex;
+            flex-direction: column;
+            width: 60vw;
+
+            &__container {
+                width: 100%;
+                margin: 1rem auto;
+            }
+        }
+    }
+
+    .hero3 {
+        margin: 0 auto;
+
+        & .container {
+            padding: 0;
+        }
+
+        & .row {
+            display: flex;
+            flex-direction: column;
+        }
+
+        & .cards {
+            display: flex;
+            flex-direction: column;
+            width: 60vw;
+
+            &__container {
+                width: 100%;
+                margin: 0 auto;
+                padding: 1rem 0;
+
+                &::after {
+                    content: "";
+                    top: -15px;
+                    right: -35px;
+                    width: 5rem;
+                    height: 5rem;
+                }
+            }
+        }
+    }
+
+    .alertbox {
+        width: 60%;
+    }
+
+    .modal {
+        top: 5.2rem;
+
+        &__wrapper {
+            &--img {
+                margin-bottom: 7rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: variables.$bk-cp) {
+    header {
+        padding: 1.5rem 2rem;
+        background: variables.$bg;
+        z-index: 999;
+    }
+
+    .navbar {
+        
+        &__menu {
+            display: flex;
+            flex-direction: column;;
+            position: absolute;
+            z-index: 1;
+            height: 100vh;
+            width: 100vw;
+
+            top: 0;
+            left: 500px;
+            transition: all 0.7s ease-in-out;
+            z-index: 888;
+
+            &.active {
+                position: fixed;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: rgba(0, 0, 0, 1);
+                transition: all 0.5s ease-out;
+                z-index: 888;
+            }
+
+            li {
+                margin: 2rem 0;
+
+                &:last-child{
+                    display: block;
+                }
+            }
+        }
+
+        &__button--lists {
+            padding: 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        &__button {
+            display: none;
+        }
+
+        &__hamMenu {
+            display: block;
+            z-index: 997;
+            
+            &.active {
+                & .bar {
+                    &:nth-child(2){
+                        opacity: 0;
+                    }
+    
+                    &:nth-child(1){
+                        transform: translateY(8px) rotate(45deg);
+                    }
+    
+                    &:nth-child(3){
+                        transform: translateY(-8px) rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+
+    .contacts {
+        left: 2rem;
+    }
+
+    .hero1 {
+
+        & .container {
+            height: 100vh;
+            max-width: 525px!important;
+            padding: 0;
+            margin: 0 auto;
+
+            text-align: center;
+        }
+    }
+
+    .hero2 {
+        margin: 0 auto;
+
+        & .row {
+            display: flex;
+            flex-direction: column;
+        }
+
+        & .cards {
+            display: flex;
+            flex-direction: column;
+            width: auto;
+
+            &__container {
+                width: 100%;
+                margin: 1rem auto;
+            }
+
+            &__title {
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    .hero3 {
+
+        & .container {
+            padding: 0;
+        }
+
+        & .cards {
+            width: 100%;
+
+            &__header {
+                height: 20rem;
+            }
+            
+            &__title {
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    .alertbox {
+        width: 60%;
+    }
+
+    footer {
+
+        .divider {
+            padding: 1rem 0 0;
+        }
+
+    }
+}
+
+@media screen and (max-width: variables.$bk-scp) {
+    .hero1 {
+
+        h1 {
+            width: 270px;
+            font-size: 1rem;
+        }
+
+        & .container {
+            height: 90vh;
+        }
+    }
+
+    .hero2 {
+        padding: 2rem 2.5rem;
+        & .cards {
+            width: 300px;
+
+            &__container {
+                width: 100%;
+                margin: 1rem auto;
+            }
+
+            &__icon {
+                height: 130px;
+            }
+
+            &__details {
+                font-size: 0.925rem;
+            }
+        }
+    }
+
+    .hero3 {
+
+        h1 {
+            font-size: 1.5rem;
+            margin: 1rem auto 3rem auto;
+
+            &:nth-child(4) {
+                margin-top: 3rem;
+            }
+        }
+
+        & .container {
+            padding: 0;
+        }
+
+        & .cards {
+            width: 300px;
+
+            &__container {
+                
+                &::after {
+                    content: "";
+                    top: -5px;
+                    right: -25px;
+                    width: 4rem;
+                    height: 4rem;
+                }
+            }
+
+            &__header {
+                height: 190px;
+
+                &--details {
+
+                    &_-description {
+                        
+                        p {
+                            font-size: 0.5rem;
+                            width: 12rem;
+                        }
+
+                        & .cards--button {
+                            width: auto;
+                            padding: 0.45rem;
+                            font-size: 0.45rem;
+            
+                            margin: 0.3rem auto;
+                        }
+                        
+                        span {
+                            font-size: 0.45rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .alertbox {
+
+        width: 80%;
+        &__content {
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: variables.$bk-sscp) {
+    .hero1 {
+
+        h1 {
+            width: 270px;
+            font-size: 1rem;
+        }
+
+        & .container {
+            height: 90vh;
+        }
+    }
+
+    .hero2 {
+        padding: 2rem 2.5rem;
+        & .cards {
+            width: 300px;
+
+            &__container {
+                width: 100%;
+                margin: 1rem auto;
+            }
+
+            &__icon {
+                height: 130px;
+            }
+
+            &__title {
+                font-size: 1rem;
+            }
+
+            &__details {
+                font-size: 0.925rem;
+            }
+        }
+    }
+
+    .hero3 {
+
+        & .row {
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin: 1rem auto 3rem auto;
+
+            &:nth-child(4) {
+                margin-top: 3rem;
+            }
+        }
+
+        & .container {
+            padding: 0;
+        }
+
+        & .cards {
+            width: 300px;
+
+            &__header {
+                height: 190px;
+            }
+        }
+    }
+}

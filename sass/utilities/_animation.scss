@@ -1,0 +1,92 @@
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+  }
+
+@-webkit-keyframes animatebottom {
+    from { 
+        bottom: -100px;
+        opacity: 0;
+    } 
+    
+    to { 
+        bottom: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes animatebottom {
+    from { 
+        bottom: -100px;
+        opacity: 0;
+    } 
+    
+    to { 
+        bottom: 0px;
+        opacity: 1;
+    }
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+    .loading {
+      animation: loading-spin infinite 3.5s ease-in-out;
+        
+      &::after {
+        animation: loading-spin infinite 1.5s ease-in-out;
+      }
+    }
+}
+
+@keyframes loading-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes blink {
+    0% {
+        background: #ccc;
+    }
+
+    49% {
+        background: #ccc;
+    }
+
+    50% {
+        background: transparent;
+    }
+    
+    99% {
+        background: transparent;
+    }
+
+    100% {
+        background: #ccc;
+    }
+}
+
+@keyframes zoom {
+    from {
+        transform:scale(0)
+    } 
+    to {
+        transform:scale(1)
+    }
+}
+
+@-webkit-keyframes zoom {
+    from {
+        -webkit-transform:scale(0)
+    } 
+    to {
+        -webkit-transform:scale(1)
+    }
+}

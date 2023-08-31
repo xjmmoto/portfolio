@@ -1,0 +1,38 @@
+@use "section2.scss";
+@use "section3.scss";
+@use "section1.scss";
+@use "../utilities/variables";
+
+section {
+    height: auto;
+    width: auto;
+    padding: 0;
+    margin: 0;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 3rem;
+    top: 40%;
+    z-index: 2;
+    
+
+    &__icons {
+
+        li a {
+            display: block;
+            margin-bottom: 3rem;
+            color: variables.$primary;
+            height: 17px;
+            width: 14px;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                color: variables.$cyan;
+                transition: all 0.7s ease-in-out;
+            }
+        }
+    }
+}

@@ -1,0 +1,312 @@
+@use "../utilities/variables";
+@use "../utilities/animation";
+@use "../utilities/modals";
+
+.hero3 {
+    width: 100%;
+
+    & .container {
+        position: relative;
+        height: inherit;
+        width: auto;
+        padding: 5rem 0 0;
+        text-align: center;
+
+        &:nth-child(3){
+            padding: 0;
+            width: 100%;
+            min-width: 186px;
+            height: 500px;
+            z-index: 1;
+
+            h1 {
+                &:first-child {
+                    padding: 3.5rem 0;
+                }
+            }
+
+            &::before {
+                content: "";
+                background-color: black;
+                width: 100%;
+                height: 500px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+            }
+        }
+
+        & .swiper-container {
+            width: 100%;
+            height: 340px;
+            z-index: 1;
+
+            & .img-fluid {
+                max-width: 100%;
+                height: inherit;
+            }
+
+            & .swiper-slide {
+                background-position: center;
+                background-size: cover;
+                width: 300px;
+                height: 169px;
+                background-color: rgba(0, 0, 0, 1);
+                -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0004);
+                z-index: 0;
+            }
+
+        }
+    }
+
+    & .row {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        padding: 0 2.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 600;
+        color: variables.$primary;
+        margin: 5rem auto;
+    }
+
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    & .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        width: 100%;
+        max-width: 1920px;
+        height: auto;
+        padding: 0 2rem;
+
+        &__container {
+            position: relative;
+            height: auto;
+            width: 100%;
+            max-width: 760px;
+            margin: 1.5rem auto;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: -30px;
+                right: -40px;
+                width: 6rem;
+                height: 6rem;
+                background: url(../images/info.png) center center no-repeat;
+                background-size: cover;
+                transform: rotate(20deg);
+            }
+        }
+
+        & .projects {
+            transform-style: preserve-3d;
+            transition: transform 1s;
+            cursor: pointer;
+
+            &.flipped {
+                transform: rotateY(180deg);
+
+                & .cards__title {
+                    transform: rotateY(180deg);
+                    z-index: 6;
+                }
+            }
+        }
+
+        &__header {
+            position: relative;
+            height: 400px;
+            width: auto;
+            margin: 0 auto;
+            
+            &:first-child {
+                filter: grayscale(1);
+                transition: all 0.5s ease-in-out;
+
+                &:hover {
+                    filter: grayscale(0);
+                    transition: all 0.7s ease-in-out;
+                }    
+            }
+
+            &--image {
+                height: inherit;
+                width: inherit;
+                border-radius: 10px 10px 0 0;
+                cursor: pointer;
+                z-index: 99;
+
+                a {
+                    position:absolute; 
+                    width:100%;
+                    height:100%;
+                    top:0;
+                    left: 0;
+                    z-index: 1;
+                }
+
+                &.img1 {
+                    background: url(../images/hero3/1.png) center center no-repeat;
+                    background-size: cover;
+                }
+
+                &.img2 {
+                    background: url(../images/hero3/2.png) center center no-repeat;
+                    background-size: cover;
+                }
+
+                &.imgd1 {
+                    width: initial;
+                    background: url(../images/hero3/d1.jpg) center center no-repeat;
+                    background-size: cover;
+                }
+
+                &.imgd2 {
+                    background: url(../images/hero3/d2.jpg) center center no-repeat;
+                    background-size: cover;
+                }
+
+                &.imgd3 {
+                    background: url(../images/hero3/d3.jpg) center center no-repeat;
+                    background-size: cover;
+                }
+
+                &.imgd4 {
+                    background: url(../images/hero3/d4.jpg) center center no-repeat;
+                    background-size: cover;
+                }
+
+                &.imgd5 {
+                    background: url(../images/hero3/d5.jpg) center center no-repeat;
+                    background-size: cover;
+                }
+
+                &.imgf1 {
+                    background: url(../images/hero3/f1.png) center center no-repeat;
+                    background-size: cover;
+                }
+
+                &.imgf2 {
+                    background: url(../images/hero3/f2.png) center center no-repeat;
+                    background-size: cover;
+                }
+
+                &.imgf3 {
+                    background: url(../images/hero3/f3.png) center center no-repeat;
+                    background-size: cover;
+                }
+
+                &.imgf4 {
+                    background: url(../images/hero3/f4.png) center center no-repeat;
+                    background-size: cover;
+                }
+            }
+
+            &--details {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: inherit;
+                height: inherit;
+                cursor: pointer;
+                transform-style: preserve-3d;
+                transition: all 1s;
+                border-radius: 10px 10px 0 0;
+                z-index: -1;
+
+                &.flipped {
+                    background: variables.$cardDetails;                    
+                    z-index: 6;
+                }
+
+                &_-description {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    height: inherit;
+                    z-index: 6;
+                    flex: 1 0 auto;
+
+                    &:last-child {
+                        transform: rotateY(180deg);
+                        z-index: 20;
+                    }
+                
+                    & .cards--button {
+                        display: block;
+                        color: variables.$bg;
+                        -webkit-text-fill-color: variables.$bg;
+                        width: 8rem;
+                        padding: 1rem;
+                        border: 1px solid variables.$secondary;
+                        margin: 1rem auto;
+                        z-index: 20;
+            
+                        &:hover {
+                            color: variables.$secondary;
+                            -webkit-text-fill-color: variables.$secondary;
+                            background: variables.$bg;
+                            z-index: 20;
+                        }
+                    }
+    
+                    p{
+                        color: variables.$bg;
+                        -webkit-text-fill-color: variables.$bg;
+                        font-size: 1rem;
+                        width: 30rem;
+                        z-index: 20;
+                    }
+    
+                    span {
+                        font-size: 1rem;
+                        color: variables.$caution;
+                        -webkit-text-fill-color: variables.$caution;
+                        z-index: 20;
+                    }                
+                }
+            }
+        }
+
+        &__title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+            height: 60px;
+            background: variables.$cards;
+            border-radius: 0 0 10px 10px;
+            z-index: 1;
+            letter-spacing: 1px;
+
+            opacity: 1;
+            visibility: visible;
+            flex: 1 0 auto;
+            
+            h3 {
+                margin: auto 0;
+                color: variables.$primary;
+                -webkit-text-fill-color: variables.$primary;
+                text-transform: uppercase;
+                z-index: 1;
+            }
+        }    
+    }
+}
